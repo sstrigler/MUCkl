@@ -1,0 +1,5 @@
+in order to get started do
+
+$ make -C lib/jsjac
+$ cp config.js.example config.js
+$ vi config.js
