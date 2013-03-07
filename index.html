@@ -7,9 +7,6 @@
     <script src="shared.js"></script>
     <script src="config.js"></script>
 
-    <script language="JavaScript" type="text/javascript" src="lib/jsjac/JSJaC.js"></script>
-
-    <script language="JavaScript" type="text/javascript" src="lib/Debugger/Debugger.js"></script>
     <script>
 <!--<![CDATA[
 
@@ -55,9 +52,9 @@ function roomSelected(oSel) {
 var Debug;
 function init() {
   /* initialise debugger */
-  if (!Debug || typeof(Debug) == 'undefined' || !Debug.start) {
-    if (DEBUG && typeof(Debugger) == 'function')
-      Debug = new Debugger(DEBUG_LVL,'MUCkl');
+  if (!Debug || typeof(Debug) == 'undefined' {
+    if (DEBUG)
+      Debug = new JSJaCConsoleLogger(DEBUG_LVL);
     else {
       Debug = new Object();
       Debug.log = function() {};
