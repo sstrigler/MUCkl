@@ -381,7 +381,7 @@ function init() {
 
   srcW = parent;
 
-  jid = passedArgs['jid'];
+  jid = passedArgs['jid'].toLowerCase();
   group = jid;
 
   if (typeof(passedArgs['nick']) != 'undefined')
