@@ -43,13 +43,12 @@ function selectUser(e) {
     var nick = firingobj.getAttribute('username');
     firingobj = document.getElementById('rosterUser_'+nick);
   }
-  if (firingobj && (firingobj.className == 'rosterUserSelected' || 
-                    firingobj.className == 'rosterUser') && 
-      firingobj != userSelected) {	
+  if (firingobj && (firingobj.className == 'rosterUserSelected' ||
+                    firingobj.className == 'rosterUser') &&
+      firingobj != userSelected) {
 
     firingobj.className = "rosterUserSelected";
     userSelected = firingobj;
-					
     send_to.innerHTML = "<span class='privMsg'>["+htmlEnc(userSelected.getAttribute('username'))+"&laquo;]</span>&nbsp;";
   } else if(userSelected) {
     send_to.innerHTML = '';
