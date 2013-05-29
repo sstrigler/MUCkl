@@ -55,6 +55,7 @@ var AUTHTYPE = 'anonymous';
 
 var MUCKLJID = "muckl"; // username
 var MUCKLPASS = "muckl"; // password
+var MUCKLNICK = "muckl"; // default nick for user
 
 /* ROOMS
  *
