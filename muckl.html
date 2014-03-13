@@ -690,8 +690,10 @@ else {
 }
 
 // create a unique resource
-if (typeof(ANONHOST) == 'undefined')
-  jid += '/' + hex_sha1(navigator.userAgent + Date.UTC(new Date()) + nick);
+if (typeof(ANONHOST) == 'undefined') {
+  var ts = new Date();
+  jid += '/' + hex_sha1(navigator.userAgent + Date.UTC(ts.getFullYear(), ts.getMonth(), ts.getDate(), ts.getHours(), ts.getMinutes(), ts.getSeconds()) + nick);
+}
 
 /* get style */
 if (opener && opener.myStyle)
