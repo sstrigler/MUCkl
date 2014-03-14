@@ -105,4 +105,4 @@ var DEBUG = true; // turn debugging on
 var DEBUG_LVL = 2; // debug-level 0..4 (4 = very noisy)
 
 /* ** Don't touch ** */
-var VERSION = "0.4.3";
+var VERSION = "0.4.4";
