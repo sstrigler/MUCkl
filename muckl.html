@@ -686,12 +686,12 @@ if (nick && nick.match(/^\s*(\S+|\S+.*\S+)\s*$/))
   nick = RegExp.$1;
 else {
   alert("Nickname missing or invalid!\nUsing default nick...");
-  nick = 'muckl'; // make sure to use some predefined default
+  nick = MUCKLNICK; // make sure to use some predefined default
 }
 
 // create a unique resource
 if (typeof(ANONHOST) == 'undefined')
-  jid += '/' + hex_sha1(navigator.userAgent + Date.UTC(new Date()) + nick);
+  jid += '/' + hex_sha1(navigator.userAgent + Date.UTC(new Date()) + nick + Math.random());
 
 /* get style */
 if (opener && opener.myStyle)
