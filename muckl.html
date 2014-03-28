@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<html>
   <head>
     <title>MUCkl</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -690,8 +689,10 @@ else {
 }
 
 // create a unique resource
-if (typeof(ANONHOST) == 'undefined')
-  jid += '/' + hex_sha1(navigator.userAgent + Date.UTC(new Date()) + nick + Math.random());
+if (typeof(ANONHOST) == 'undefined') {
+  var ts = new Date();
+  jid += '/' + hex_sha1(navigator.userAgent + Date.UTC(ts.getFullYear(), ts.getMonth(), ts.getDate(), ts.getHours(), ts.getMinutes(), ts.getSeconds()) + nick + Math.random());
+}
 
 /* get style */
 if (opener && opener.myStyle)
